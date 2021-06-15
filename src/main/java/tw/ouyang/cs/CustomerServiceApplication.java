@@ -37,7 +37,7 @@ public class CustomerServiceApplication {
 		calendarA.set(1985, 1, 1);
 		calendarB.set(2021, 6, 10);
 		return args -> {
-			for (int i = 1; i <= 200; i++) {
+			for (int i = 1; i <= 524; i++) {
 				Customer customer = new Customer();
 				customer.setIdAndCustomerIdAutomatically();
 				customer.setName(faker.name().fullName());

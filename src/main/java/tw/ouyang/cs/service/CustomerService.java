@@ -22,6 +22,10 @@ public class CustomerService {
 	@Autowired
 	private CustomerCrudRepository customerCrudRepository;
 
+	public Flux<Customer> getAllCustomers() {
+		return Flux.fromIterable(customerCrudRepository.findAll());
+	}
+
 	public Flux<Customer> getCustomers(Condition condition) {
 		condition.setCurrentIndex(condition.getStep() * Integer.parseInt(condition.getRows()));
 		return Flux.fromIterable(customerRepository.findCustomers(condition));
